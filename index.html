@@ -116,7 +116,7 @@
                   value="Уточнить у покупателя"
                 />
 
-                <button type="submit" class="form-btn mm_button">
+                <button type="submit" class="form-btn mm_button" id="scroll-top">
                   Заказать сейчас
                 </button>
 
@@ -586,7 +586,7 @@
             <div class="container">
               <!--Container-->
 
-              <form method="post" class="form-footer">
+              <form method="post"  class="form-top form-footer">
                 <div class="form-item">
                   <select
                     name="country"
@@ -672,13 +672,23 @@
         CountBox();
         $(".slider-arrows").html("");
 
+        $("#scroll-top").click(function (event) {
+          event.preventDefault();
+          $("html, body").animate(
+            {
+              scrollTop: $(".form-top").offset().top,
+            },
+            1500
+          );
+        });
+
         $("#scroll-footer").click(function (event) {
           event.preventDefault();
           $("html, body").animate(
             {
               scrollTop: $(".form-footer").offset().top,
             },
-            2500
+            1000
           );
         });
 
